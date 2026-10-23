@@ -1,0 +1,14 @@
+# RASA-TO-CINEMATIC PARAMETER LOOKUP MATRIX (`matrices/rasa_to_cinematic_parameter_lookup.md`)
+
+## 1. CROSS-DEPARTMENTAL AESTHETIC MAPPING
+
+This lookup matrix translates Bharata Muni's 9 classical Rasas into exact camera, lighting, audio, and color grading parameters for seamless hand-off across all production departments.
+
+| Rasa | Preferred Focal Length & Character | Lighting Contrast & Kelvin Target | Audio Stem Dominance & Raga | DI Color Palette & Curves |
+| :--- | :--- | :--- | :--- | :--- |
+| **Karuna** (Pathos / Smoldering Grief) | 50mm–85mm Anamorphic, shallow DoF, oval bokeh, locked slow dolly creep. | 8:1 to 12:1 Chiaroscuro; 6800K cold zenith skylight vs. 2100K flickering mustard diya. | Sub-bass drone (35Hz), solo Sarangi meend, distant temple bell (-34 LKFS). **Raga Marwa**. | Slate-teal shadows (#1B262C), bruised amber-gold highlights (#D9822B), deep subtractive density. |
+| **Raudra** (Suppressed Fury / Rage) | 24mm–28mm Wide Prime, deep focus, sharp perspective distortion, rapid cuts. | 16:1 Harsh direct hard light; 3200K stark tungsten or blinding 6500K direct sun. | Piercing high-mids (3.5kHz), distorted breath transients, discordant percussion. **Raga Bhairav**. | High contrast S-curve, crushed shadow toe, desaturated cold greens, blood-orange halation. |
+| **Shringara** (Intimacy / Yearning) | 65mm–100mm Macro Prime, creamy circular bokeh, smooth rack focus. | 3:1 to 4:1 Soft wrap; 2700K–3000K warm diffused candlelight or golden dusk. | Breath intimacy (-20 LKFS), dry mouth transients (4.5kHz), warm acoustic Bansuri/Sitar. **Raga Yaman**. | Golden pastel rolloff, lifted shadows, saturated skin warmth along Vectorscope I-line. |
+| **Bhayanaka** (Terror / Guilt) | 32mm–40mm Dutch tilt (-8° to -15°), uncompensated focus breathing, handheld float (0.3). | 10:1 Top-down downlight; sickly 4200K uncorrected fluorescent or dying 2400K tungsten. | LFE psychological rumble (24Hz-45Hz), abrupt silence cuts, whispering height channels. **Raga Todi**. | Muted greens and cyans, cyan shadow tint, heavy organic 35mm grain, dark elliptical vignette. |
+| **Bibhatsa** (Revulsion / Rot) | 100mm Macro ECU, extreme tactile texture, harsh flat front angle. | 2:1 Flat muddy overhead; 4800K overcast drizzle, high specular wetness. | Grating scraping Foley (1.8kHz-3.2kHz), wet squelch, flies/insects stridulation. | Desaturated yellows, decayed olive-ochre wash, crushed midtones, heavy film halation bleed. |
+| **Shanta** (Peace / Acceptance) | 35mm–50mm Spherical, spirit-level locked 0.0°, architectural centered symmetry. | 2:1 Ultra-diffused morning softbox; 5200K neutral daylight, zero harsh shadows. | Low noise floor (NC-15), delicate Tanpura drone in C#, natural birdsong bed (-38 LKFS). **Raga Bhairavi**. | Clean neutral Rec.709 balance, gentle filmic shoulder rolloff, natural unclipped black floor. |
