@@ -5,6 +5,20 @@ This template dictates how `workspace/exports/03_Voiceover_System.md` must be co
 ```markdown
 # MASTER VOICEOVER SYSTEM & ACOUSTIC PROSODY BIBLE
 
+## 0. CREATIVE MASTER IDENTITY & CERTIFICATION
+- **Draft ID:** {{DRAFT_ID}}
+- **Primary Preset:** {{PRIMARY_PRESET}}
+- **Secondary Influence:** {{SECONDARY_INFLUENCE}}
+- **Textual Transformation:** {{TEXTUAL_TRANSFORMATION}}
+- **Canonical POV Decision:** {{POV_DECISION_AND_CANON_SUPPORT}}
+- **Spoken Word Count:** {{SPOKEN_WORD_COUNT}}
+- **Target Runtime / WPM:** {{TARGET_RUNTIME}} / {{TARGET_WPM}}
+- **Projected Runtime Including Pause Budget:** {{PROJECTED_RUNTIME}}
+- **Sibling Draft Similarity Audit:** {{SIBLING_SIMILARITY_RESULT}}
+- **Pre-PDF Gate:** {{PRE_PDF_GATE_STATUS}}
+
+---
+
 ## 1. NARRATOR PSYCHOLOGICAL PERSONA & VOCAL ARCHITECTURE
 - **Narrator UUID:** {{NARRATOR_ID}} (Linked: {{LINKED_CHARACTER_UUID}})
 - **Vantage Point:** {{NARRATIVE_VANTAGE_POINT}}

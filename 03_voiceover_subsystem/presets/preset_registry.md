@@ -31,7 +31,23 @@ Target approximately **560–575 Hindi whitespace words** when the selected pres
 
 ## Mandatory Output Shape
 
-Write the final Creative Master as continuous prose paragraphs, not numbered pointer lines. Preserve paragraph breaks at story turns. Add bracketed delivery cues only when they change performance: `[thoughtful]`, `[serious]`, `[whispers]`, `[short pause]`, `[long pause]`, `[exhales sharply]`, or a specific diegetic event such as `[gunshot]`.
+Write the final Creative Master as continuous prose paragraphs, not numbered pointer lines. Preserve paragraph breaks at story turns. Add bracketed delivery cues only when they change performance: `[thoughtful]`, `[serious]`, `[measured]`, `[quietly]`, `[whispers]`, `[short pause]`, `[long pause]`, `[exhales sharply]`, or a specific diegetic event such as `[gunshot]`.
+
+## Mandatory Draft Differentiation
+
+When multiple drafts are requested, generate each draft as a separate creative pass, not as a header change or tag-only transformation. Declare `draft_id`, `primary_preset`, `secondary_influence`, and `textual_transformation` in the output metadata. Compare normalized prose against sibling drafts before PDF export: identical prose is a hard failure, and similarity of `0.82` or higher requires a rewrite unless the user explicitly requested a formatting-only edition. A tagging pass over unchanged prose must be labeled an edition, not a new draft.
+
+## Mandatory Base-Style Gates
+
+- Lock POV to first-person insider (`मैं`, `हम`, `मेरी नज़र`, `हमारी टीम`) when the Canonical Story Bible supports direct operational knowledge; otherwise record why intimate third person is required.
+- Build each major beat through hook → forensic place/time anchor → sensory and spatial micro-blocking → cause-and-effect action → consequence/accountability.
+- Include exact source-supported distances, times, ranks, objects, posture, and behavior. Never invent a number or prop to imitate texture.
+- Keep narrative Hindi in Devanagari but retain source-supported Roman English for ranks, departments, locations, technical terms, modern props, and units when using a Hinglish TTS preset.
+- Reject three consecutive sentences of four words or fewer. Noun-list montage is not scene writing.
+- Place at least half of all paralinguistic cues inside paragraphs. Never place `[whispers]` immediately before `[gunshot]`; the vocal energy must change before kinetic action.
+- For Civic Noir, require approximately 8–12 ellipsis groups and a minimum of 560–575 spoken words for a 6.5-minute script at 86–88 WPM. Count spoken words before printing any duration claim.
+
+Run `presets/draft_integrity_and_style_gate.md` and `scripts/validate_voiceover_draft.py` before compiling a PDF. Rewrite and rerun any failing gate.
 
 ## Safety and Accuracy Guardrails
 

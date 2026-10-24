@@ -54,3 +54,14 @@ For a 6.5-minute adaptation, use approximately 5–9 meaningful cues and avoid c
 ## What to Preserve in New Episodes
 
 Preserve the witness position, selective English terms, factual specificity, delayed reveal, tactical distance, short action sentences, and a final civic or ethical consequence. Avoid generic motivational language, constant heroic elevation, gratuitous violence, and unexplained technical jargon.
+
+## Failure Findings Added After Comparative Review
+
+The comparative review of the first three generated drafts identified four pipeline failures that are now hard gates:
+
+1. **Duplicate-draft failure:** Simple, polished, and preset-tagged files reused identical prose; a title or tag change is not a creative rewrite.
+2. **Helicopter-summary failure:** Thirteen plot beats were compressed into a detached third-person summary, starving the main encounter of time, geometry, and sensory detail.
+3. **Telegraphic-staccato failure:** Chained noun fragments and one-line sentences forced repeated TTS pitch resets and sounded like a grocery list.
+4. **Mechanical-tag failure:** Mood tags were placed at paragraph index zero, while the reference uses physiological cues inside a thought or action pivot.
+
+The correction is to use a beat-sheet word budget before prose, lock the POV, require source-supported sensory and spatial anchors, retain Roman English for operational Hinglish nouns, use ellipses and em dashes as breath architecture, inject cues mid-paragraph, and run a sibling-similarity and runtime gate before PDF compilation.

@@ -52,6 +52,22 @@ Before drafting a documentary voiceover, select one preset from `presets/preset_
 
 Presets control voice persona, sentence cadence, pause density, code-switching, target WPM, and the final moral landing. Do not blend presets silently; if blending is useful, state the primary preset and secondary influence in the Creative Master metadata. For a 6.5-minute episode, prefer 560–575 Hindi whitespace words at approximately 86–88 WPM unless the selected preset explicitly specifies a faster delivery.
 
+### Draft Integrity and Pre-PDF Gate
+Before compiling any Creative Master PDF, run `presets/draft_integrity_and_style_gate.md` and execute `scripts/validate_voiceover_draft.py`. Every requested draft MUST declare a `draft_id`, `primary_preset`, `secondary_influence`, and `textual_transformation`. A header change, title change, or tag-only pass does not count as a new draft.
+
+Reject and rewrite when any of the following occurs:
+
+1. Spoken word count does not match the declared runtime and target WPM; for 6 minutes 30 seconds at 86–88 WPM, target 560–575 spoken words and count before printing the duration claim.
+2. Normalized prose is identical to a sibling draft, or sibling similarity is `0.82` or higher without an explicit formatting-only request.
+3. The narration becomes a detached helicopter summary instead of first-person insider POV when canon supports direct operational knowledge.
+4. Three or more consecutive sentences contain four words or fewer, creating trailer-montage staccato.
+5. A major beat lacks source-supported sensory detail, spatial geometry, a physical object or behavior, and consequence/accountability.
+6. Hinglish presets transliterate operational English into Devanagari (`एसएसपी`, `डीजीपी`, `ई-सर्विलांस`, `जीप`, `बोनट`) instead of retaining Roman English terms.
+7. Civic Noir has fewer than 8 ellipsis groups, or more than half of the cues sit mechanically at paragraph starts.
+8. `[whispers]` is placed immediately before `[gunshot]`, or a cue’s emotion contradicts the action beat.
+
+Report the audit results in the generation log: draft ID, preset, transformation, spoken word count, projected runtime, sibling similarity, POV, ellipses, short-sentence streaks, Roman-English hygiene, scene-geometry coverage, and mid-paragraph cue ratio. Do not deliver a PDF while a hard gate fails.
+
 ### Pass 2 — The Acoustic, Phonetic & DSP Brain (Technical Master)
 1. Decompile written Devanagari lines into **Devanagari Phonetics & IPA (`05_technical.../01_devanagari...md`)**, marking Mahaprana aspirations, Anunasika nasals, and Nukta fricatives.
 2. Calculate **Prosody & WPM Math (`05_technical.../02_prosody...md`)**, defining the fundamental pitch contour ($F_0$ Hz) and semitone drop curves.
@@ -81,9 +97,12 @@ In compliance with `00_governance_and_laws/09_creative_vs_technical_dual_renderi
 03_voiceover_subsystem/
 ├── presets/                                                           # Reusable documentary narration style presets
 │   ├── preset_registry.md                                             # Style fingerprint, selection matrix, runtime rules
+│   ├── draft_integrity_and_style_gate.md                              # Anti-duplication and pre-PDF certification rules
 │   ├── 01_civic_noir_field_witness.md                                # Atmospheric first-person field witness
 │   ├── 02_grounded_police_procedural.md                              # Evidence-led procedural clarity
 │   └── 03_accessible_public_memory.md                                # Simple broad-audience narration
+├── scripts/                                                           # Deterministic generation and validation helpers
+│   └── validate_voiceover_draft.py                                   # Runtime, uniqueness, cadence, hygiene, and cue gate
 ├── SKILL.md                                                           # This Master Orchestrator
 ├── 01_writer_emulation_engines/                                       # [14 Files] W00 through W13 Master Authors
 ├── 02_lexicon_and_word_selection_engine/                              # [10 Files] Word-Level Craft, Dialects & Blacklists
