@@ -23,7 +23,7 @@ allowed_words = target_words ± 4%
 projected_seconds = spoken_word_count / target_wpm × 60 + pause_budget_seconds
 ```
 
-For a 6 minute 30 second Hindi voiceover at 86–88 WPM, target approximately **560–575 spoken words**, then calculate pauses separately. Performance tags do not count as spoken words. A 375-word body must fail, regardless of the header claim.
+For a 6 minute 30 second Hindi voiceover at 86–88 WPM, target approximately **560–575 spoken words**, then calculate pauses separately. For the longer Base Style / tactical-memoir profile requested in the critique, target **650–720 spoken words at a declared 100–110 WPM** and calculate pauses separately; do not claim 6:30 at 86 WPM with 650–720 words. Performance tags do not count as spoken words. A 375-word body must fail, regardless of the header claim.
 
 ## 3. POV and Immersion Gate
 
@@ -45,6 +45,8 @@ Every major beat must contain, where the Canonical Story Bible supports it:
 
 Never invent numbers, distances, props, ranks, or operational facts. Use exact source values in Arabic numerals with Roman English units when canonically available.
 
+Before rewriting, create a `fact_inventory` from the Canonical Story Bible: named people, ranks, locations, dates, counts, distances, durations, props, departments, and distinctive descriptors. A creative rewrite may reorder or expand these facts, but may not silently replace them with vague substitutes such as `एक अपराधी`, `कई जिले`, or `कुछ देर`. If a fact is intentionally omitted, record the reason in the audit metadata.
+
 ## 5. Sentence Cadence Gate
 
 Ban trailer-montage staccato. Do not chain three or more consecutive sentences of four words or fewer. Do not use noun lists as a substitute for scene writing. Prefer multi-clause sentences joined by commas, ellipses, or em dashes, then land on a short decisive sentence only at a true beat ending.
@@ -62,6 +64,8 @@ For Civic Noir, use approximately 8–12 ellipsis groups and occasional em dashe
 Use approved cues only: `[thoughtful]`, `[serious]`, `[annoyed]`, `[excited]`, `[measured]`, `[quietly]`, `[whispers]`, `[clears throat]`, `[inhales deeply]`, `[exhales sharply]`, `[chuckles]`, `[sighs]`, `[short pause]`, `[long pause]`, `[gunshot]`.
 
 At least half of all cues must occur inside paragraphs, between clauses or sentences. Never put every mood tag at paragraph index zero. Do not place `[whispers]` immediately before `[gunshot]`; change energy before the shot. Cue psychology must match the beat.
+
+Never place a mood or SFX cue after the final sentence of a paragraph as an afterthought. A cue must govern the words that follow it or mark the exact action at which it occurs. `[gunshot]` must appear at the firing beat, never after a completed philosophical sentence.
 
 ## 8. Pre-PDF Certification
 
@@ -86,5 +90,11 @@ Before PDF compilation, report:
 - mid-paragraph cue ratio
 
 - scene-geometry coverage
+
+- canonical fact-inventory retention and any approved omissions
+
+- end-of-paragraph / retroactive cue scan
+
+- PDF Unicode extraction scan when a PDF is delivered
 
 If any hard gate fails, rewrite the failing paragraphs and rerun the audit. Do not deliver a PDF with a duration header that the body cannot support.

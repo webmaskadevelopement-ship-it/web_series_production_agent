@@ -27,7 +27,12 @@
 
 ## Runtime Rule for a 6.5-Minute Episode
 
-Target approximately **560–575 Hindi whitespace words** when the selected preset is delivered at **86–88 WPM**, including natural sentence pauses. Do not pad with repeated explanation. Add time through intentional breath, scene transition, and silence cues only where the visual edit supports them.
+Target one of two mathematically grounded timing profiles:
+
+- **Slow intimate profile:** approximately **560–575 spoken words at 86–88 WPM**, with pauses calculated separately.
+- **Base Style long-form profile:** approximately **650–720 spoken words at 100–110 WPM**, with pauses calculated separately. This profile gives the tactical memoir enough scene oxygen without falsely claiming 6:30 at 86 WPM.
+
+Do not pad with repeated explanation. Add time through intentional breath, scene transition, and silence cues only where the visual edit supports them.
 
 ## Mandatory Output Shape
 
@@ -41,6 +46,7 @@ When multiple drafts are requested, generate each draft as a separate creative p
 
 - Lock POV to first-person insider (`मैं`, `हम`, `मेरी नज़र`, `हमारी टीम`) when the Canonical Story Bible supports direct operational knowledge; otherwise record why intimate third person is required.
 - Build each major beat through hook → forensic place/time anchor → sensory and spatial micro-blocking → cause-and-effect action → consequence/accountability.
+- Build and retain a fact inventory before rewriting: named people, locations, numbers, durations, props, ranks, departments, and distinctive descriptors. Do not replace `Arun Shukla`, `Brijesh`, `36 Districts`, `90 Minutes`, or similar anchors with vague substitutes such as `अपराधी`, `कई जिले`, or `कुछ देर`.
 - Include exact source-supported distances, times, ranks, objects, posture, and behavior. Never invent a number or prop to imitate texture.
 - Keep narrative Hindi in Devanagari but retain source-supported Roman English for ranks, departments, locations, technical terms, modern props, and units when using a Hinglish TTS preset.
 - Reject three consecutive sentences of four words or fewer. Noun-list montage is not scene writing.

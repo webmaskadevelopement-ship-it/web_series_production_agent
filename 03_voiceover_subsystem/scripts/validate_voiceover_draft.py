@@ -67,7 +67,7 @@ def cue_report(text):
             mid += 1
     return cues, unknown, mid, len(paragraphs)
 
-def validate(text, target_minutes=6.5, target_wpm=87, siblings=None, preset="civic_noir"):
+def validate(text, target_minutes=6.5, target_wpm=87, siblings=None, preset="civic_noir", required_tokens=None):
     errors=[]; warnings=[]
     words=spoken_words(text)
     target=target_minutes*target_wpm
@@ -88,9 +88,18 @@ def validate(text, target_minutes=6.5, target_wpm=87, siblings=None, preset="civ
         errors.append(f"TAG_FAIL: Unknown cues {unknown}")
     if cues and mid < max(3, paragraphs//2):
         errors.append(f"TAG_PLACEMENT_FAIL: only {mid}/{paragraphs} paragraphs contain mid-paragraph cues")
+    paragraph_blocks=[p.strip() for p in spoken_body(text).split("\n\n") if p.strip()]
+    retro=[p for p in paragraph_blocks if re.search(r"\[[^\]]+\]\s*$", p)]
+    if retro:
+        errors.append(f"RETROACTIVE_TAG_FAIL: {len(retro)} paragraph(s) end with a cue; move it before the words/action it governs")
     if "[whispers]" in text and "[gunshot]" in text:
         if re.search(r"\[whispers\].{0,120}\[gunshot\]", text, re.S):
             errors.append("TAG_LOGIC_FAIL: [whispers] is too close to [gunshot]; change energy before kinetic action")
+    if re.search(r"।\s*\[gunshot\]", text) or re.search(r"\[gunshot\]\s*$", text, re.M):
+        errors.append("SFX_TIMING_FAIL: [gunshot] follows a completed sentence or paragraph; place it at the firing beat")
+    missing=[token for token in (required_tokens or []) if token not in text]
+    if missing:
+        errors.append(f"FACT_RETENTION_FAIL: required canonical anchors missing: {missing}")
     for sibling in siblings or []:
         score=SequenceMatcher(None, normalize(text), normalize(sibling)).ratio()
         if score >= 0.82:
@@ -100,10 +109,10 @@ def validate(text, target_minutes=6.5, target_wpm=87, siblings=None, preset="civ
     return {"passed": not errors, "spoken_word_count": len(words), "target_words": target, "projected_seconds_at_target_wpm": len(words)/target_wpm*60, "ellipsis_count": ellipses, "mid_paragraph_cue_paragraphs": mid, "paragraph_count": paragraphs, "errors": errors, "warnings": warnings}
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("draft"); ap.add_argument("--sibling", action="append", default=[]); ap.add_argument("--target-minutes", type=float, default=6.5); ap.add_argument("--target-wpm", type=float, default=87); ap.add_argument("--preset", default="civic_noir"); ap.add_argument("--json", action="store_true"); args=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument("draft"); ap.add_argument("--sibling", action="append", default=[]); ap.add_argument("--required", action="append", default=[], help="canonical name/number/prop that must survive the rewrite"); ap.add_argument("--target-minutes", type=float, default=6.5); ap.add_argument("--target-wpm", type=float, default=87); ap.add_argument("--preset", default="civic_noir"); ap.add_argument("--json", action="store_true"); args=ap.parse_args()
     text=Path(args.draft).read_text(encoding="utf-8")
     siblings=[Path(p).read_text(encoding="utf-8") for p in args.sibling]
-    report=validate(text,args.target_minutes,args.target_wpm,siblings,args.preset)
+    report=validate(text,args.target_minutes,args.target_wpm,siblings,args.preset,args.required)
     print(json.dumps(report,ensure_ascii=False,indent=2)) if args.json else print("PASS" if report["passed"] else "FAIL", report)
     raise SystemExit(0 if report["passed"] else 1)
 if __name__ == "__main__": main()

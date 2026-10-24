@@ -22,7 +22,9 @@ Use for police operations, manhunts, covert surveillance, dangerous encounters, 
 6. Use flowing multi-clause sentences with `...` and `—`; do not chain three or more one-to-four-word sentences.
 7. Place physiological cues inside paragraphs at thought pivots; never prepend the same mood tag to every paragraph.
 8. Shift vocal energy before kinetic action: never place `[whispers]` immediately before `[gunshot]`.
-9. Close by connecting the act to duty, public safety, accountability, or the meaning of uniform.
+9. Place each cue before or exactly at the thought/action it governs; never append `[gunshot]`, `[short pause]`, or a mood cue after the final sentence of a paragraph.
+10. Preserve the fact inventory—names, ranks, locations, exact counts, distances, durations, props, and departments—rather than replacing it with vague nouns.
+11. Close by connecting the act to duty, public safety, accountability, or the meaning of uniform.
 
 ## Prosody and Timing
 

@@ -65,3 +65,12 @@ The comparative review of the first three generated drafts identified four pipel
 4. **Mechanical-tag failure:** Mood tags were placed at paragraph index zero, while the reference uses physiological cues inside a thought or action pivot.
 
 The correction is to use a beat-sheet word budget before prose, lock the POV, require source-supported sensory and spatial anchors, retain Roman English for operational Hinglish nouns, use ellipses and em dashes as breath architecture, inject cues mid-paragraph, and run a sibling-similarity and runtime gate before PDF compilation.
+
+## Additional Regressions Documented After Second Draft 3 Critique
+
+Analysis of Draft 3 iterations revealed four additional critical failure modes that must be strictly rejected:
+
+1. **Retroactive cue placement:** Placing mood, pause, or SFX tags at the end of a paragraph as an afterthought rather than before the words or at the exact action beat they govern. Specifically, placing `[gunshot]` after a completed Hindi sentence or philosophical line corrupts diegetic timing.
+2. **Fact over-sanitization:** Silently replacing specific Canonical Story Bible anchors (such as `Arun Shukla`, `Brijesh`, `Raj`, `36 Districts`, `90 Minutes`, `7 Days`, `Jeep`, `Bonnet`, `Wireless Log`, `DGP`) with generic or vague substitutes (`अपराधी`, `कई जिले`, `कुछ देर`). Every draft must build and preserve an explicit fact inventory.
+3. **POV regression back to third person:** Slipping from first-person retrospective field witness (`मैं`, `हम`, `मेरी टीम`) into detached, third-person observer commentary.
+4. **PDF font-table corruption:** Rendering PDF voiceovers through non-Unicode or improperly mapped fonts creates IPA-style Devanagari corruption glyphs (`ɟ`, `ɡ`, `ɞ`, `ɝ`, `ɧ`, `Õ`). All compiled PDFs must undergo extraction verification with `validate_pdf_unicode.py` using Unicode-compliant engines (e.g., LibreOffice with Noto Sans Devanagari or Mangal).

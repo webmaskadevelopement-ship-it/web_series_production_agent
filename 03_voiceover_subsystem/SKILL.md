@@ -63,8 +63,11 @@ Reject and rewrite when any of the following occurs:
 4. Three or more consecutive sentences contain four words or fewer, creating trailer-montage staccato.
 5. A major beat lacks source-supported sensory detail, spatial geometry, a physical object or behavior, and consequence/accountability.
 6. Hinglish presets transliterate operational English into Devanagari (`एसएसपी`, `डीजीपी`, `ई-सर्विलांस`, `जीप`, `बोनट`) instead of retaining Roman English terms.
-7. Civic Noir has fewer than 8 ellipsis groups, or more than half of the cues sit mechanically at paragraph starts.
-8. `[whispers]` is placed immediately before `[gunshot]`, or a cue’s emotion contradicts the action beat.
+7. A fact inventory item (named person, rank, location, date, number, distance, duration, prop, department, or distinctive descriptor) is silently generalized or deleted during a rewrite.
+8. Civic Noir has fewer than 8 ellipsis groups, or more than half of the cues sit mechanically at paragraph starts.
+9. A cue appears after the final sentence of a paragraph as a retroactive instruction, or `[gunshot]` appears after the action/philosophical line it is meant to govern.
+10. `[whispers]` is placed immediately before `[gunshot]`, or a cue’s emotion contradicts the action beat.
+11. Delivered PDF extraction contains IPA-style corruption glyphs (`ɟ`, `ɡ`, `ɞ`, `ɝ`, `ɧ`, `Õ`) or does not preserve representative Devanagari source tokens.
 
 Report the audit results in the generation log: draft ID, preset, transformation, spoken word count, projected runtime, sibling similarity, POV, ellipses, short-sentence streaks, Roman-English hygiene, scene-geometry coverage, and mid-paragraph cue ratio. Do not deliver a PDF while a hard gate fails.
 
@@ -102,7 +105,8 @@ In compliance with `00_governance_and_laws/09_creative_vs_technical_dual_renderi
 │   ├── 02_grounded_police_procedural.md                              # Evidence-led procedural clarity
 │   └── 03_accessible_public_memory.md                                # Simple broad-audience narration
 ├── scripts/                                                           # Deterministic generation and validation helpers
-│   └── validate_voiceover_draft.py                                   # Runtime, uniqueness, cadence, hygiene, and cue gate
+│   ├── validate_voiceover_draft.py                                   # Runtime, uniqueness, cadence, hygiene, and cue gate
+│   └── validate_pdf_unicode.py                                       # PDF extraction check for Devanagari font corruption
 ├── SKILL.md                                                           # This Master Orchestrator
 ├── 01_writer_emulation_engines/                                       # [14 Files] W00 through W13 Master Authors
 ├── 02_lexicon_and_word_selection_engine/                              # [10 Files] Word-Level Craft, Dialects & Blacklists
