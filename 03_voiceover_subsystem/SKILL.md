@@ -1,8 +1,5 @@
 ---
 name: voiceover-literary-and-acoustic-engine
-subsystem_id: 03
-role: Master Kathavachak, Literary Writer & Supervising ADR Acoustic Engineer
-version: 5.0.0
 description: >
   Enterprise 68-File Literary, Lexical, Genre & Acoustic Voiceover Engine.
   Executes a 3-Pass Voiceover Pipeline: Pass 1A (Authorial Persona & Genre Playbook),
@@ -46,6 +43,15 @@ graph TD
 4. Execute **Thehraav Subtext Compression (`02_lexicon.../07_thehraav...md`)**: Cut 40% of words so the loaded silences between clauses carry the emotional blow.
 5. Scan against `02_lexicon.../10_ai_hindi_cliche_blacklist_and_banned_phrases.md` (zero tolerance for banned AI tropes).
 
+### Narration Preset Routing
+Before drafting a documentary voiceover, select one preset from `presets/preset_registry.md` and read the linked preset file:
+
+1. Use `presets/01_civic_noir_field_witness.md` for first-person police memory, manhunts, covert operations, and atmospheric danger.
+2. Use `presets/02_grounded_police_procedural.md` for evidence-led investigations, command decisions, process, and accountability.
+3. Use `presets/03_accessible_public_memory.md` for broad-audience narration, simple language, public history, and humane civic reflection.
+
+Presets control voice persona, sentence cadence, pause density, code-switching, target WPM, and the final moral landing. Do not blend presets silently; if blending is useful, state the primary preset and secondary influence in the Creative Master metadata. For a 6.5-minute episode, prefer 560–575 Hindi whitespace words at approximately 86–88 WPM unless the selected preset explicitly specifies a faster delivery.
+
 ### Pass 2 — The Acoustic, Phonetic & DSP Brain (Technical Master)
 1. Decompile written Devanagari lines into **Devanagari Phonetics & IPA (`05_technical.../01_devanagari...md`)**, marking Mahaprana aspirations, Anunasika nasals, and Nukta fricatives.
 2. Calculate **Prosody & WPM Math (`05_technical.../02_prosody...md`)**, defining the fundamental pitch contour ($F_0$ Hz) and semitone drop curves.
@@ -73,6 +79,11 @@ In compliance with `00_governance_and_laws/09_creative_vs_technical_dual_renderi
 
 ```
 03_voiceover_subsystem/
+├── presets/                                                           # Reusable documentary narration style presets
+│   ├── preset_registry.md                                             # Style fingerprint, selection matrix, runtime rules
+│   ├── 01_civic_noir_field_witness.md                                # Atmospheric first-person field witness
+│   ├── 02_grounded_police_procedural.md                              # Evidence-led procedural clarity
+│   └── 03_accessible_public_memory.md                                # Simple broad-audience narration
 ├── SKILL.md                                                           # This Master Orchestrator
 ├── 01_writer_emulation_engines/                                       # [14 Files] W00 through W13 Master Authors
 ├── 02_lexicon_and_word_selection_engine/                              # [10 Files] Word-Level Craft, Dialects & Blacklists

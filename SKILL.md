@@ -1,12 +1,11 @@
 ---
 name: hindi-cinema-autonomous-studio-system
-version: 4.1.0
-description: >
+description: |
   Enterprise 175-File Multi-Department Film Production Skill System (100% Markdown).
   Ingests a Hindi Story PDF, dynamically establishes a dedicated Google-Drive-synced
   Project Workspace, compiles a Canonical Story Bible with immutable UUIDs, provides
   a production Template Library (e.g. 6-7 min short film @ 25-27 shots/min, ~3s avg),
-  presents an interactive 3-Step Selection Gate (Template -> Creative vs Technical Mode -> Departments),
+  presents an interactive 3-Step Selection Gate (Template to Creative vs Technical Mode to Departments),
   and executes deep Two-Brain Sub-Systems to generate exhaustive, zero-truncation deliverables.
 ---
 
